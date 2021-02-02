@@ -69,9 +69,26 @@ void BiTree::Pre() {
 			p = p->rchild;
 		}
 	}
+}
 
-	
-
+void BiTree::In() {
+	BiNode* local = root;
+	if (local) {
+		std::cout << "emputy tree" << std::endl;
+	}
+	std::stack<BiNode*> stack;
+	//中序遍历
+	while (local || !stack.empty()) {  //如果下一个结点不为空,或者栈非空
+		// 左子树入栈
+		while (local) {
+			stack.push(local);
+			local = local->lchild;
+		}
+		local = stack.top();
+		std::cout << local->data << std::endl;
+		stack.pop();
+		local = local->rchild;
+	}
 }
 
 

@@ -7,15 +7,33 @@ struct BiNode{
 	BiNode* rchild;
 };
 
+struct BiNodeTag {
+	int data;
+	BiNodeTag* lchild;
+	BiNodeTag* rchild;
+	bool ltag,rtag;
+};
+
 
 class BiTree
 {
 public:
-	BiNode *Creat();
+	BiNode* Creat();
 	void Pre();//前序遍历
 	void In();//中序遍历
 	void Post();//后序遍历
     BiNode *root = nullptr;//指向根结点的头指针
+};
+
+//线索二叉树
+class ThreadBiTree
+{
+public:
+	BiNodeTag* Creat(BiNodeTag *bn);
+	void Pre();//前序遍历
+	void In();//中序遍历
+	void Post();//后序遍历
+	BiNodeTag* root = nullptr;//指向根结点的头指针
 };
 
 
