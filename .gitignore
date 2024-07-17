@@ -51,5 +51,5 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Build Folder
+# Build Target Folder
 build/
