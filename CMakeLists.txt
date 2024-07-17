@@ -1,12 +1,12 @@
-cmake_minimum_required(VERSION 3.12)
-project(CProject)
-
+cmake_minimum_required(VERSION 3.25)
+project(Algorithm C)
 set(CMAKE_C_STANDARD 11)
 
-LINK_LIBRARIES(m pthread)
+message("PROJECT_SOURCE_DIR=${PROJECT_SOURCE_DIR}")
 
-file(REMOVE_RECURSE "cmake-build-debug")
-include_directories(header) 
-aux_source_directory(src DIR_SRCS)
+include_directories(${PROJECT_SOURCE_DIR}/includes ${PROJECT_SOURCE_DIR}/sources)
 
-add_executable(CProject.so main.c ${DIR_SRCS})
+aux_source_directory(${PROJECT_SOURCE_DIR}/includes HDR)
+aux_source_directory(${PROJECT_SOURCE_DIR}/sources SRC)
+
+add_executable(Algorithm ${PROJECT_SOURCE_DIR}/sources/main.c ${HDR} ${SRC})
