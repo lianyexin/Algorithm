@@ -2,12 +2,13 @@
 #include "link_list.h"
 
 bool isEmpty(struct listElem* list){
+    puts("the list is null pointer");
     return list == NULL?false:true;
 }
 
 void insertElem(int elem,struct listElem* list) {
-    if(list == NULL){
-        printf("the list is null pointer \n");
+    if(isEmpty(list)){
+        puts("the list is null pointer");
     }
     struct listElem newElem;
     struct listElem* p = list;
