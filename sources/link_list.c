@@ -66,7 +66,7 @@ int deleteElem(int elem,struct listElem* list){
             return findLocation;
         }
         if(p->nextElem == NULL){
-            printf("can not find element in list \n");
+            puts("can not find element in list");
             return -1;
         }
     }
