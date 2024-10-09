@@ -5,8 +5,10 @@
 
 
 bool initialWinSocket();
-void createClient();
 
+void createClient(char* host,u_short port);
+
+void createTcpServer(char* host,u_short port);
 
 
 #endif
