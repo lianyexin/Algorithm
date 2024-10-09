@@ -12,7 +12,7 @@ bool initialWinSocket(){
 }
 
 
-void createClient(){
+void createClient(char* host,u_short port){
     struct sockaddr_in conn = {};
     char buf[4096] = {0};
     unsigned int iRemoteAdd = 0;
@@ -24,8 +24,8 @@ void createClient(){
         return -1;
     }
     conn.sin_family = AF_INET;
-    conn.sin_port = htons(9090);
-    inet_pton(AF_INET,"127.0.0.1",&iRemoteAdd);
+    conn.sin_port = htons(port);
+    inet_pton(AF_INET,host,&iRemoteAdd);
     conn.sin_addr.S_un.S_addr = iRemoteAdd;
 
     if(0 > connect(Sfd,(void*)&conn,sizeof(conn))){
@@ -35,3 +35,8 @@ void createClient(){
     }
 
 }
+
+void createTcpServer(char* host,u_short port){
+    
+
+};
