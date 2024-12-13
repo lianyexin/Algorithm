@@ -17,3 +17,27 @@ int *countingSort(int orginal[],int length){
         }
     }
 }
+
+
+//希尔排序
+void ShellSort(int* a, int n,int gap){
+    for (int j = 0; j < gap; j++)
+    {
+        for (int i = j; i < n - gap; i += gap)
+        {
+            int end = i;
+            int temp = a[end + gap];
+            while (end >= 0)
+            {
+                if (a[end] > temp)
+                {
+                    a[end + gap] = a[end];
+                    end -= gap;
+                }
+                else
+                    break;
+            }
+            a[end + gap] = temp;
+        }
+    }
+}
