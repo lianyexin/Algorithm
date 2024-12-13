@@ -24,8 +24,9 @@ void countingSort(int *orginal, int length)
 }
 
 // 希尔排序
-void ShellSort(int *a, int n, int gap)
+void ShellSort(int *a, int n)
 {
+    int gap = n / 2;
     for (int j = 0; j < gap; j++)
     {
         for (int i = j; i < n - gap; i += gap)
