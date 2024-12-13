@@ -5,18 +5,19 @@
 #include <pthread.h>
 #include <Winbase.h>
 
-void *aggregate(int num){
-    printf("call aggregate%d\n",num);
+void *aggregate(int num)
+{
+    printf("call aggregate%d\n", num);
     u_int64 pid = GetCurrentProcessId();
     u_int64 tid = GetCurrentThreadId();
-    printf("process id = %d\n",pid);
-    printf("thread id = %d\n",tid);
-    for(int i=0;i<10;i++){
-        printf("thread%d=%d\n",num,i);
+    printf("process id = %d\n", pid);
+    printf("thread id = %d\n", tid);
+    for (int i = 0; i < 10; i++)
+    {
+        printf("thread%d=%d\n", num, i);
         Sleep(1);
     }
 }
-
 
 int main(void)
 {
@@ -30,15 +31,11 @@ int main(void)
     puts("----> end");
     pthread_t ptht[2];
 
+    int status1 = pthread_create(&ptht[0], NULL, aggregate, 1);
+    int status2 = pthread_create(&ptht[1], NULL, aggregate, 2);
 
-    int status1 = pthread_create(&ptht[0],NULL,aggregate,1);
-    int status2 = pthread_create(&ptht[1],NULL,aggregate,2);
-    
-    pthread_join(ptht[0],NULL);
-    pthread_join(ptht[1],NULL);
-
-
-
+    pthread_join(ptht[0], NULL);
+    pthread_join(ptht[1], NULL);
 
     return 0;
 }
