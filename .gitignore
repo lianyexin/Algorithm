@@ -50,7 +50,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
-CMakeCache.txt
 
 # Build Target Folder
 build/
+/CMakeCache.txt
