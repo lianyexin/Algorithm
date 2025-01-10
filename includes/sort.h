@@ -3,4 +3,5 @@
 
 int *countingSort(int orginal[], int length);
 void ShellSort(int *a, int n, int gap);
+void shellSort(int arr[]);
 #endif
