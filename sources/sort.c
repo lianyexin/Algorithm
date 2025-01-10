@@ -41,7 +41,7 @@ void shellSort(int arr[], int n) {
     }
 }
 
-void shellSort(int arr[]){
+void shellSortSelf(int arr[]){
      printf("size = %d\n",sizeof(arr)/sizeof(int));
      int size = sizeof(arr)/sizeof(int);
      int grap = size/2;
