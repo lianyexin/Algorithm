@@ -1,6 +1,7 @@
 
+#include "sort.h"
 // 计算排序
-void countingSort(int *orginal, int length)
+void *countingSort(int *orginal, int length)
 {
     int max = 0;
     for (int i = 0; i < length; i++)

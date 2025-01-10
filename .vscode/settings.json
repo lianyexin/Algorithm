@@ -3,6 +3,8 @@
         "link_list.h": "c",
         "stdlib.h": "c",
         "stdbool.h": "c",
-        "winsock2.h": "c"
+        "winsock2.h": "c",
+        "sort.h": "c",
+        "stdio.h": "c"
     }
 }
